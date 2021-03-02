@@ -20,6 +20,6 @@ class Artwork(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    is_artisan = models.BooleanField(default=False)
+    is_artist = models.BooleanField(default=False)
 
 
