@@ -24,4 +24,31 @@ def signup(request):
     else:
         User_form = UserCreationForm()
         Profile_form = ProfileForm()
-    return render(request, 'signup.html', {'user_form': User_form, 'profile_form':Profile_form})
+    return render(request, 'signup.html', {'user_form': User_form, 'profile_form': Profile_form})
+
+
+def newBooth(request):
+    if request.method == 'POST':
+        form = BoothForm(request.POST)
+        if form.is_valid():
+            booth = form.save()
+            booth.created_by = request.user
+            booth.save()
+            request.user.profile.has_booth = True
+            return redirect('home')
+    else:
+        form = BoothForm()
+    return render(request, 'new_booth.html', {'form': form})
+
+
+def newArtwork(request, pk):
+    if request.method == 'POST':
+        form = ArtworkForm(request.POST)
+        if form.is_valid():
+            artwork = form.save()
+            artwork.booth = Booth.objects.get(pk=pk)
+            artwork.save()
+            return redirect('home')
+    else:
+        form = ArtworkForm()
+    return render(request, 'new_artwork.html', {'form': form})
