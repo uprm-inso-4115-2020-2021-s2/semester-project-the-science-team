@@ -13,7 +13,7 @@ class Booth(models.Model):
 class Artwork(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='booth_images')
     price = models.FloatField()
     interested = models.BooleanField(default=False)
     booth = models.ForeignKey(Booth, on_delete=models.CASCADE, related_name='artworks')

@@ -1,0 +1,25 @@
+{%  extends 'base.html' %}
+
+{% block Title %} Home {% endblock %}
+{% load static %}
+{% block header %}
+
+
+{% endblock %}
+
+
+{% block body %}
+			<section class="banner desaturate">
+                <div id="bannerfont">Booth Name: {{booth.name}}</div> </section> </br>
+                <div> Description : {{ booth.description }}</div>
+			</section>
+            <img src="{{ booth.cover_image.url }}" style="width: 400px;height: 300px;"/>
+    <br>
+    <a href="{% url 'new_artwork' booth.pk %}">Create new artwork</a>
+    {% for artwork in booth.artworks.all %}
+        <br>
+        Test
+
+    {% endfor %}
+
+{% endblock %}

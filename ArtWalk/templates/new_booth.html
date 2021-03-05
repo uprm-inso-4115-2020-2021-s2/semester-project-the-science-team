@@ -10,11 +10,14 @@
         <div class="card">
           <div class="card-body">
             <h3 class="card-title">New Booth</h3>
-            <form method="post" novalidate>
-              {% csrf_token %}
-              {% include 'form.html' %}
-              <button type="submit" class="btn btn-primary btn-block">Create booth</button>
-            </form>
+
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% include 'form.html' %}
+                 <button type="submit" class="btn btn-primary btn-block">Create booth</button>
+                </form>
+
+
           </div>
         </div>
       </div>
