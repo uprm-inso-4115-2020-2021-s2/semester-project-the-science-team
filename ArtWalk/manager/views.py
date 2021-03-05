@@ -29,9 +29,9 @@ def signup(request):
 
 def newBooth(request):
     if request.method == 'POST':
-        form = BoothForm(request.POST)
+        form = BoothForm(request.POST, request.FILES)
         if form.is_valid():
-            booth = form.save()
+            booth = form.save(commit=False)
             booth.created_by = request.user
             booth.save()
             request.user.profile.has_booth = True
@@ -43,10 +43,10 @@ def newBooth(request):
 
 def newArtwork(request, pk):
     if request.method == 'POST':
-        form = ArtworkForm(request.POST)
+        form = ArtworkForm(request.POST, request.FILES)
         if form.is_valid():
-            artwork = form.save()
-            artwork.booth = Booth.objects.get(pk=pk)
+            artwork = form.save(commit=False)
+            artwork.booth = Booth.objects.get(pk=1)
             artwork.save()
             return redirect('home')
     else:
