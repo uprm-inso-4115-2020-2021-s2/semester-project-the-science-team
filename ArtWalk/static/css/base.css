@@ -1,0 +1,35 @@
+:root {
+  --darkBrown: #583924;
+  --lightBrown: #b48051;
+  --paperBrown: #e2ccb7;
+}
+
+.header {
+    width: 100vw;
+    height: 10vh;
+    background: var(--darkBrown);
+    color: white;
+    font-size: 50px;
+    font-family: 'Stick', sans-serif;
+    text-align: center;
+    line-height: 80px;
+}
+
+body {
+    background: var(--lightBrown);
+}
+
+.main {
+    height: 90vh;
+    width: 80vw;
+    background: var(--paperBrown);
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.center {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+}
