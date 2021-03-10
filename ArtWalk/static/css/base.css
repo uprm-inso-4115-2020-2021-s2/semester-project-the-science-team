@@ -1,11 +1,15 @@
+/* Root Variables */
 :root {
   --darkBrown: #583924;
+  --darkerBrown: #49301f;
   --lightBrown: #b48051;
   --paperBrown: #e2ccb7;
+  --elegantBlack: #202020;
 }
 
+/* Dark Brown Header, where the title goes */
 .header {
-    width: 100vw;
+    width: 100%;
     height: 8vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
@@ -16,23 +20,26 @@
     text-align: center;
 }
 
+/* Light Brown Background */
 body {
     background: var(--lightBrown);
 }
 
+/* Delete link underlining */
 a {
     text-decoration:none;
 }
 
+/* Lighter brown, where the main content goes */
 .main {
-    height: 90vh;
     width: 80vw;
     background: var(--paperBrown);
     margin-left: 10vw;
-    margin-right: 10vw;
     padding: 0;
+    padding-bottom: 5%;
 }
 
+/* Navigation Bar */
 table.nav {
     background: #202020;
     table-layout: fixed;
@@ -65,9 +72,25 @@ table.nav {
     user-select: none;
 }
 
+/* Centering elements */
 .center {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   line-height: normal;
+}
+
+/* Scrollbar Width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: var(--paperBrown);
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--elegantBlack);
 }

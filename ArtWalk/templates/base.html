@@ -7,15 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
     <script src="{% static 'js/linkToDiv.js' %}"></script>
      {% block header %}{% endblock header %}
     {% block headScript %}{% endblock headScript %}
 </head>
 <body>
-        <div class="header">
-            <span class="center">Art Walk</span>
-        </div>
+        <div class="header">Art Walk</div>
+
         <div class="main">
 
             <table class="nav"><tr>

@@ -18,9 +18,8 @@ class Artwork(models.Model):
     interested = models.BooleanField(default=False)
     booth = models.ForeignKey(Booth, on_delete=models.CASCADE, related_name='artworks')
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     is_artisan = models.BooleanField(default=False)
     has_booth = models.BooleanField(default=False)
-
-
