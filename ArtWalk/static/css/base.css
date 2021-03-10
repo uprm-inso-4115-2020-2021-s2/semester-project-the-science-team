@@ -6,13 +6,14 @@
 
 .header {
     width: 100vw;
-    height: 10vh;
+    height: 8vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     background: var(--darkBrown);
     color: white;
     font-size: 50px;
     font-family: 'Stick', sans-serif;
     text-align: center;
-    line-height: 80px;
 }
 
 body {
@@ -51,7 +52,6 @@ table.nav {
     height: 50px;
     font-size: 20px;
     transition: 1s;
-    cursor: pointer;
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -61,6 +61,8 @@ table.nav {
 
 .white {
     color: white;
+    cursor: pointer;
+    user-select: none;
 }
 
 .center {

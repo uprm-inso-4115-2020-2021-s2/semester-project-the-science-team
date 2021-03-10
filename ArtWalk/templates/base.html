@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-
+    <script src="{% static 'js/linkToDiv.js' %}"></script>
      {% block header %}{% endblock header %}
     {% block headScript %}{% endblock headScript %}
 </head>
@@ -19,7 +19,7 @@
         <div class="main">
 
             <table class="nav"><tr>
-                <td class="navLink"><a href="{% url 'home' %}" class="white"> Home</a></td>
+                <td class="navLink"><a href="{% url 'home' %}" class="white">Home</a></td>
                 {% if user.is_authenticated %}
                 <td class="navLink"><a href="{% url 'logout' %}" class="white">Logout</a></td>
                 {% if user.profile.has_booth %}
@@ -33,6 +33,7 @@
             </tr></table>
 
             {% block body %}{% endblock body %}
+            <script src="{% static 'js/linkToDiv.js' %}"></script>
         </div>
 </body>
 </html>
