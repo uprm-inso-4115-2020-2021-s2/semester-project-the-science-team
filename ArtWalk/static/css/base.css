@@ -48,9 +48,11 @@ table.nav {
 
 .navLink {
     text-decoration: none;
-    height: 30px;
+    height: 50px;
+    font-size: 20px;
     transition: 1s;
     cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .navLink:hover {
