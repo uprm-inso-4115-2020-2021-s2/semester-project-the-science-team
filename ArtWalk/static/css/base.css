@@ -19,12 +19,46 @@ body {
     background: var(--lightBrown);
 }
 
+a {
+    text-decoration:none;
+}
+
 .main {
     height: 90vh;
     width: 80vw;
     background: var(--paperBrown);
     margin-left: 10vw;
     margin-right: 10vw;
+    padding: 0;
+}
+
+table.nav {
+    background: #202020;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+    color: #cecece;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.normalize {
+    text-decoration:none;
+}
+
+.navLink {
+    text-decoration: none;
+    height: 30px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.navLink:hover {
+    background: #404040;
+}
+
+.white {
+    color: white;
 }
 
 .center {

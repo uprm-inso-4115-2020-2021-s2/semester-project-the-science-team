@@ -16,18 +16,20 @@
             <span class="center">Art Walk</span>
         </div>
         <div class="main">
-            <a href="{% url 'home' %}"> Home</a>
-            {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}">Logout</a>
-            {% if user.profile.has_booth %}
-                <a href="{% url 'view_booth' user.booth.first.pk %}">View Booth</a>
-            {% elif user.profile.is_artisan %}
-                <a href="{% url 'new_booth' %}">Create Booth</a>
-            {% endif %}
-            {% else %}
-                <a href="{% url 'login' %}">Login</a>
-                <a href="{% url 'signup' %}">Sign up</a>
-            {% endif %}
+
+            <table class="nav"><tr>
+                <td class="navLink"><a href="{% url 'home' %}" class="white"> Home</a></td>
+                {% if user.is_authenticated %}
+                <td class="navLink"><a href="{% url 'logout' %}" class="white">Logout</a></td>
+                {% if user.profile.has_booth %}
+                <td class="navLink"><a href="{% url 'view_booth' user.booth.first.pk %}" class="white">View Booth</a></td>
+                {% elif user.profile.is_artisan %}
+                <td class="navLink"><a href="{% url 'new_booth' %}" class="white">Create Booth</a></td>
+                {% endif %}{% else %}
+                <td class="navLink"><a href="{% url 'login' %}" class="white">Login</a></td>
+                <td class="navLink"><a href="{% url 'signup' %}" class="white">Sign up</a></td>
+                {% endif %}
+            </tr></table>
 
             {% block body %}{% endblock body %}
         </div>
