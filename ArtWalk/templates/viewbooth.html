@@ -33,7 +33,11 @@
 
     {% for artwork in booth.artworks.all %}
         <br>
-        Test
+        Name: {{ artwork.name }}<br>
+        Description: {{ artwork.description }}<br>
+        <img src="{{ artwork.image.url }}" class="cover centered" alt="cover pic">
+        <br>
+        Price: {{ artwork.price }}<br>
 
     {% endfor %}
 

@@ -27,6 +27,8 @@
                 <td class="navLink"><a href="{% url 'view_booth' user.booth.first.pk %}" class="white">View Booth</a></td>
                 {% elif user.profile.is_artisan %}
                 <td class="navLink"><a href="{% url 'new_booth' %}" class="white">Create Booth</a></td>
+                {% else %}
+                    <td class="navLink"><a href="" class="white">Explore Booths</a></td>
                 {% endif %}{% else %}
                 <td class="navLink"><a href="{% url 'login' %}" class="white">Login</a></td>
                 <td class="navLink"><a href="{% url 'signup' %}" class="white">Sign up</a></td>
