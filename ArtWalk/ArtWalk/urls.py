@@ -29,6 +29,7 @@ urlpatterns = [
     path('booth/createnew/',views.newBoothView.as_view(), name='new_booth'),
     path('booth/view/<int:pk>', views.viewBooth, name='view_booth'),
     path('booth/artwork/createnew/<int:pk>', views.newArtwork, name='new_artwork'),
+    path('booth/explore', views.exploreBooths,name='explore_booths'),
     path('admin/', admin.site.urls),
 
 ]

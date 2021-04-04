@@ -83,3 +83,8 @@ def newArtwork(request, pk):
     else:
         form = ArtworkForm()
     return render(request, 'new_artwork.html', {'form': form})
+
+def exploreBooths(request):
+    booths = Booth.objects.all()
+
+    return render(request,'explorebooths.html', {'booths': booths})

@@ -1,0 +1,16 @@
+{%  extends 'base.html' %}
+
+{% block Title %} Home {% endblock %}
+{% load static %}
+{% block header %}
+
+
+{% endblock %}
+
+
+{% block body %}
+			{% for booth in booths %}
+
+                <td class="navLink"><a href="{% url 'view_booth' booth.pk %}" class="white"> {{ booth.name }} </a></td> <br>
+            {% endfor %}
+{% endblock %}
