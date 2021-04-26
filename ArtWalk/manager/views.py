@@ -72,6 +72,7 @@ def viewBooth(request, pk):
     booth = Booth.objects.get(pk=pk)
     return render(request, 'viewbooth.html', {'booth': booth})
 
+
 def newArtwork(request, pk):
     if request.method == 'POST':
         form = ArtworkForm(request.POST, request.FILES)
