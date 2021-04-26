@@ -3,14 +3,27 @@
 {% block Title %} Home {% endblock %}
 {% load static %}
 {% block header %}
-
-
+<link rel="stylesheet" href="{% static 'css/explore.css' %}">
 {% endblock %}
 
 
 {% block body %}
-			{% for booth in booths %}
-
-                <td class="navLink"><a href="{% url 'view_booth' booth.pk %}" class="white"> {{ booth.name }} </a></td> <br>
+    <div class="subheader">Explore Booths</div>
+    <table class="exploreTable">
+        <thead>
+            <tr>
+                <th>Booth Name</th>
+                <th>Booth Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booth in booths %}
+                <tr>
+                    <td><a href="{% url 'view_booth' booth.pk %}">{{ booth.name }}</a></td>
+                    <td>{{ booth.description }}</td>
+                </tr>
             {% endfor %}
+
+        </tbody>
+    </table>
 {% endblock %}

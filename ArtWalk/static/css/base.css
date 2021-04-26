@@ -20,6 +20,17 @@
     text-align: center;
 }
 
+.subheader {
+    margin-top: 1%;
+    width: 100%;
+    height: 5vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    color: black;
+    font-size: 30px;
+    font-family: 'Stick', sans-serif;
+    text-align: center;
+}
 /* Light Brown Background */
 body {
     background: var(--lightBrown);

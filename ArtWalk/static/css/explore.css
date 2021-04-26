@@ -1,0 +1,42 @@
+table.exploreTable {
+  border: 6px solid #583924;
+  background-color: #FFE3C6;
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: 'Bebas Neue', cursive;
+}
+
+table.exploreTable td, table.exploreTable th {
+  border: 1px solid #948473;
+  padding: 4px 4px;
+}
+
+table.exploreTable tbody td {
+  font-size: 18px;
+}
+
+table.exploreTable thead {
+  background: #948473;
+  background: -moz-linear-gradient(top, #e2ccb7 0%, #b48051 66%, #583924 100%);
+  background: -webkit-linear-gradient(top, #e2ccb7 0%, #b48051 66%, #583924 100%);
+  background: linear-gradient(to bottom, #e2ccb7 0%, #b48051 66%, #583924 100%);
+}
+
+table.exploreTable thead th {
+  font-size: 18px;
+  font-weight: bold;
+  color: #202020;
+  text-align: center;
+  border-left: 2px solid #948473;
+  font-family: 'Zen Dots', cursive;
+}
+
+table.exploreTable thead th:first-child {
+  border-left: none;
+}
+
+table.exploreTable tfoot td {
+  font-size: 16px;
+}
