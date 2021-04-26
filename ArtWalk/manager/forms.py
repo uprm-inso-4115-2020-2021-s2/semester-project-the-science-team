@@ -11,7 +11,7 @@ class ProfileForm(forms.ModelForm):
 class BoothForm(forms.ModelForm):
     class Meta:
         model = Booth
-        fields = ('name', 'description', 'cover_image', )
+        fields = ('name', 'description', 'cover_image', 'twitch_name', )
 
 
 class ArtworkForm(forms.ModelForm):
