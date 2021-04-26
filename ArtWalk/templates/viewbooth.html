@@ -17,11 +17,15 @@
 
 
 
-{% ifequal booth user.booth.first %}
+
     <div class="mb-4">
+        {% ifequal booth user.booth.first %}
         <a href="{% url 'new_artwork' booth.pk  %}" class="btn btn-primary">New Artwork</a>
 
+        {% endifequal %}
         Live Stream:
+
+        <p id="demo">{{ booth.twitch_name }}</p>
 
         <div id="twitch-embed"></div>
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
@@ -41,10 +45,15 @@
 
 </div>
 
+       <iframe src="https://www.twitch.tv/embed/Ninja/chat?parent=localhost"
+        height="700"
+        width="300">
+</iframe>
+
 
     </div>
 
-{% endifequal %}
+
 
 
 
@@ -74,10 +83,13 @@
 
 
 <script type="text/javascript">
+    var twitch_name = "{{ booth.twitch_name }}";
+
+
   new Twitch.Player("twitch-embed", {
       width: 854,
     height: 480,
-    channel: "lec"
+    channel: twitch_name
   });
 </script>
 
