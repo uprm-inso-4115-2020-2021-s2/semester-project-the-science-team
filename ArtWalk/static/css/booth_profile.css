@@ -82,3 +82,29 @@
 .btn-primary.focus,.btn-primary:focus{
 box-shadow:0 0 0 .2rem rgba(0,123,255,.5)
 }
+
+
+table.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #202020;
+  color: #cecece;
+}
+
+.tabcontent{
+    display:none;
+    position:relative;
+    width:90%;
+    background:#583924;
+    margin:auto;
+    color:white;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+.navLink {
+    cursor: pointer;
+}

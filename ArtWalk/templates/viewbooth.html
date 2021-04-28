@@ -18,51 +18,30 @@
 
 
 
-    <div class="mb-4">
+
         {% ifequal booth user.booth.first %}
-        <a href="{% url 'new_artwork' booth.pk  %}" class="btn btn-primary">New Artwork</a>
+
 
         {% endifequal %}
-        Live Stream:
+        <table class="nav" style="width:90%;margin:auto;"><tr>
+            <td class="navLink" onclick="openCity(event, 'Details')">Details</td>
+            <td class="navLink" onclick="openCity(event, 'Twitch')">Twitch Booth</td>
+            {% ifequal booth user.booth.first %}
+                <td class="navLink" style="cursor:auto;"><a href="{% url 'new_artwork' booth.pk  %}">New Artwork</a></td>
+            {% endifequal %}
+        </tr></table>
 
-        <p id="demo">{{ booth.twitch_name }}</p>
-
-        <div id="twitch-embed"></div>
-<script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-<div id="twitch-embed">
-
-{#    <iframe#}
-{#  id="chat_embed"#}
-{#  src="https://www.twitch.tv/embed/lec/chat?parent=www.google.com"#}
-{#  height="500"#}
-{#  width="350">#}
-{#</iframe>#}
-
-
-
-
-
-</div>
-
-       <iframe src="https://www.twitch.tv/embed/Ninja/chat?parent=localhost"
-        height="700"
-        width="300">
-</iframe>
-
-
+<div id="Details" class="tabcontent" style="padding-top:2%;padding-bottom:2%;">
+    <div style="padding:20px;">
+        <b>Name:</b> {{booth.name}}<br>
+        <b>Description:</b> {{ booth.description }}
     </div>
-
-
-
-
-
-
-<div class="details">
-    <b>Name:</b> {{booth.name}}<br>
-    <b>Description:</b> {{ booth.description }}
 </div>
-
+<div id="Twitch" class="tabcontent">
+        <div id="twitch-content" style=";margin-left:5%;margin-right:5%;">
+        <div id="twitch-embed" style="display:inline;"></div><script src="https://embed.twitch.tv/embed/v1.js"></script><iframe src="https://www.twitch.tv/embed/{{booth.twitch_name}}/chat?parent=localhost" height="480" width="390" style="border-width:0;"></iframe>
+        </div>
+</div>
 
 
 
@@ -91,6 +70,22 @@
     height: 480,
     channel: twitch_name
   });
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 </script>
 
 {% endblock %}
