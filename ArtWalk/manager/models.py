@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Booth(models.Model):
     name = models.CharField(max_length=50)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=1000)
     twitch_name = models.CharField(max_length=50)
     cover_image = models.ImageField()
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='booth')

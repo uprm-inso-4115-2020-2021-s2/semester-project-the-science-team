@@ -33,8 +33,7 @@
 
 <div id="Details" class="tabcontent" style="padding-top:2%;padding-bottom:2%;">
     <div style="padding:20px;">
-        <b>Name:</b> {{booth.name}}<br>
-        <b>Description:</b> {{ booth.description }}
+        {{ booth.description }}
     </div>
 </div>
 <div id="Twitch" class="tabcontent">
@@ -43,22 +42,26 @@
         </div>
 </div>
 
-
-
-
-
-
-
-
-    {% for artwork in booth.artworks.all %}
-        <br>
-        Name: {{ artwork.name }}<br>
-        Description: {{ artwork.description }}<br>
-        <img src="{{ artwork.image.url }}" class="cover centered" alt="cover pic">
-        <br>
-        Price: {{ artwork.price }}<br>
-
-    {% endfor %}
+<table class="artworkTable">
+        <thead>
+            <tr>
+                <th>Artwork Picture</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for artwork in booth.artworks.all %}
+                <tr>
+                    <td><img src="{{ artwork.image.url }}" class="cover centered" alt="cover pic"></td>
+                    <td>{{ artwork.name }}</td>
+                    <td>{{ artwork.description }}</td>
+                    <td>${{ artwork.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 
 <script type="text/javascript">

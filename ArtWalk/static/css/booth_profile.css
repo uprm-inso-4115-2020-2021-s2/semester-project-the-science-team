@@ -108,3 +108,48 @@ color:white;
 .navLink {
     cursor: pointer;
 }
+
+
+
+table.artworkTable {
+  border: 6px solid #202020;
+  background-color: #fff4e9;
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: 'Bebas Neue', cursive;
+}
+
+table.artworkTable td, table.artworkTable th {
+  border: 1px solid #948473;
+  padding: 4px 4px;
+}
+
+table.artworkTable tbody td {
+  font-size: 18px;
+}
+
+table.artworkTable thead {
+  background: #948473;
+  background: -moz-linear-gradient(top, #cecece 0%, #404040 66%, #202020 100%);
+  background: -webkit-linear-gradient(top, #cecece 0%, #404040 66%, #202020 100%);
+  background: linear-gradient(to bottom, #cecece 0%, #404040 66%, #202020 100%);
+}
+
+table.artworkTable thead th {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  border-left: 2px solid #948473;
+  font-family: 'Zen Dots', cursive;
+}
+
+table.artworkTable thead th:first-child {
+  border-left: none;
+}
+
+table.artworkTable tfoot td {
+  font-size: 16px;
+}
