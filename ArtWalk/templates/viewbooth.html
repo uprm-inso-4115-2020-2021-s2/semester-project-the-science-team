@@ -25,7 +25,7 @@
         {% endifequal %}
         <table class="nav" style="width:90%;margin:auto;"><tr>
             <td class="navLink" onclick="openCity(event, 'Details')">Details</td>
-            <td class="navLink" onclick="openCity(event, 'Twitch')">Twitch Booth</td>
+            <td class="navLink" onclick="openCity(event, 'Twitch')">Live Stream</td>
             {% ifequal booth user.booth.first %}
                 <td class="navLink" style="cursor:auto;"><a href="{% url 'new_artwork' booth.pk  %}">New Artwork</a></td>
             {% endifequal %}
